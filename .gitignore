@@ -1,0 +1,4 @@
+*.bmp
+.dist-buildwrapper
+.project
+.settings

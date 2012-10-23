@@ -1,0 +1,63 @@
+name:           OpenAlchemistAI
+version:        0.1
+cabal-version:  >= 1.2
+build-type:     Simple
+author:         jean-philippem
+data-files:     data/bottle-big.bmp,
+                data/cheese-big.bmp,
+                data/cheese-small.bmp,
+                data/cherries-big.bmp,
+                data/cherries-small.bmp,
+                data/cow-big.bmp,
+                data/cow-small.bmp,
+                data/frog-big.bmp,
+                data/frog-small.bmp,
+                data/green-big.bmp,
+                data/green-small.bmp,
+                data/mosquito-big.bmp,
+                data/mosquito-small.bmp,
+                data/penguin-big.bmp,
+                data/penguin-small.bmp,
+                data/purple-big.bmp,
+                data/purple-small.bmp,
+                data/red-big.bmp,
+                data/red-small.bmp,
+                data/yellow-big.bmp,
+                data/yellow-small.bmp
+
+executable OpenAlchemistAI
+  hs-source-dirs:  
+                   exe, 
+                   src
+  main-is:         Main.hs
+  build-depends:   base >= 4,
+                   Win32,
+                   bmp >= 1.2.2,
+                   containers,
+                   bytestring,
+                   directory,
+                   filepath
+  ghc-options:     -O2 -rtsopts -fspec-constr-count=5
+  other-modules:   Games.OpenAlchemist.AI.Types,
+                   Games.OpenAlchemist.AI.Vision,
+                   Games.OpenAlchemist.AI.Game
+
+test-suite OpenAlchemistAI-test
+  type:            exitcode-stdio-1.0
+  x-uses-tf:       true
+  build-depends:   
+                   base >= 4,
+                   HUnit >= 1.2 && < 2,
+                   test-framework >= 0.4.1,
+                   test-framework-hunit
+  ghc-options:     -Wall -rtsopts
+  main-is:         Main.hs
+  hs-source-dirs:  
+                   test,
+                   src
+  other-modules:   
+                   Games.OpenAlchemist.AI.Game,
+                   Games.OpenAlchemist.AI.GameTests,
+                   Games.OpenAlchemist.AI.Types,
+                   Games.OpenAlchemist.AI.Vision
+
