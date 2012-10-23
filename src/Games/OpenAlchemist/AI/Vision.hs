@@ -1,4 +1,5 @@
-
+-- | Capture game window and detect shapes
+-- This could probably be enhanced by somebody who has studied the problem, instead of just me hacking around!
 module Games.OpenAlchemist.AI.Vision where
 
 import Games.OpenAlchemist.AI.Types

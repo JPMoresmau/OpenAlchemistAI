@@ -42,10 +42,10 @@ testDrop = TestLabel "testDrop" (TestCase (
         do
         let empty=M.empty
         let zero=M.insert (0,0) Green empty
-        assertEqual "empty + Green !=zero" zero (dropBall empty Green 0)
+        assertEqual "empty + Green !=zero" zero (dropTile empty Green 0)
         let full0=M.fromList $ map (\y-> ((0,y),Green)) [0 .. maxHeight-1]
         let invalid0=M.fromList $ map (\y-> ((0,y),Green)) [0 .. maxHeight]
-        assertEqual "full0 + Green !=invalid0" invalid0 (dropBall full0 Green 0)
+        assertEqual "full0 + Green !=invalid0" invalid0 (dropTile full0 Green 0)
         ))    
         
 testFindGroups     :: Test

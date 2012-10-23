@@ -1,4 +1,4 @@
-
+-- | test entry point
 module Main where
 
 import Games.OpenAlchemist.AI.GameTests
